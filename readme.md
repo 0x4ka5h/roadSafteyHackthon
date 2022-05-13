@@ -52,7 +52,7 @@ We have used YoLov5 for pothole detection purposes cause my personal computer ca
 
 You know YoLov5, don't you..? YOLOv5 is a family of object detection architectures and models pretrained on the COCO dataset, and represents Ultralytics open-source research into future vision AI methods, incorporating lessons learned and best practices evolved over thousands of hours of research and development and "goo gooooo goooo. Go and search about it online. I'm not here to teach you about YoLo". 
 
-Some RR: ![sadistic look](images/index.webp)
+Some RR: ![sadistic look](https://g00g1y5p4.github.io/posts/depthestimationofapothole/images/index.webp)
 
 Me: "Jokes apart!." Once the level of hazards is detected, then we have to apply some image processing techniques that are used to highlight features at the edge of our various detected potholes. We have already trained a regressive model which will predict the Approx. depth of a pothole.
 
@@ -62,7 +62,7 @@ That's it, we have done a lot. Now we just need to send the information to cloud
 
 Previously as I have said, we detect potholes using YoLov5 which uses convolution neural networks in their model architecture. Once we initialize the camera and other setup, the model takes the input as an image from the camera and returns information about the image and detected coordinates. 
 
-Download model weights [(trainedModel)](files/best.pt)
+Download model weights [(trainedModel)](https://g00g1y5p4.github.io/posts/depthestimationofapothole/files/best.pt)
 
 ```py
 model=torch.hub.load('yolov5','custom',path='best.pt',source='local')
@@ -74,7 +74,7 @@ result.show()
 coordinatesList = result.xyxy[0][0] #coordinates of first detected pothole
 
 ```
-![(outputImage)](images/image0.jpg) 
+![(outputImage)](https://g00g1y5p4.github.io/posts/depthestimationofapothole/images/image0.jpg) 
 
 [12 50 200 300]
 
@@ -92,7 +92,7 @@ Me: That's why after a lot of tries I just trail this simple network and Boom. I
 
 So, Lets try our model on a video.
 
-Download model [(DepthEstimation)](files/modelforDepth.h5)
+Download model [(DepthEstimation)](https://g00g1y5p4.github.io/posts/depthestimationofapothole/files/modelforDepth.h5)
 
 ```py
 depthModel = keras.models.load_model("modelforDepth.h5")
@@ -156,7 +156,7 @@ while True:
 v.release()
 cv2.destroyAllWindows()
 ```
-![BoundedBoxed](images/rect.png)
-![DepthEstimated](images/depth.png)
+![BoundedBoxed](https://g00g1y5p4.github.io/posts/depthestimationofapothole/images/rect.png)
+![DepthEstimated](https://g00g1y5p4.github.io/posts/depthestimationofapothole/images/depth.png)
 
 ##### Thanks for reading! {align=center}
